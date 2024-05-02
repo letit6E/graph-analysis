@@ -28,7 +28,7 @@ target_include_directories(
     "\$<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/source>"
 )
 
-target_compile_features(graph-analysis_lib PUBLIC cxx_std_20)
+target_compile_features(graph-analysis_lib PUBLIC cxx_std_17)
 
 find_package(fmt REQUIRED)
 target_link_libraries(graph-analysis_lib PRIVATE fmt::fmt)
@@ -40,7 +40,7 @@ add_executable(graph-analysis::exe ALIAS graph-analysis_exe)
 
 set_property(TARGET graph-analysis_exe PROPERTY OUTPUT_NAME graph-analysis)
 
-target_compile_features(graph-analysis_exe PRIVATE cxx_std_20)
+target_compile_features(graph-analysis_exe PRIVATE cxx_std_17)
 
 target_link_libraries(graph-analysis_exe PRIVATE graph-analysis_lib)
 
